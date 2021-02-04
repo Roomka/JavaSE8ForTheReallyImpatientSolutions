@@ -10,6 +10,11 @@ public class C1E1 {
         return new String[]{"Programming", "Java", "Functional"};
     }
 
+
+    /** Is the comparator code in the Arrays.sort method called in the same thread as
+     the call to sort or a different thread?
+     * @param words
+     */
     public static void sortArrayByWordLength(String[] words) {
         Arrays.sort(words, (first, second) -> {
             System.out.println("Thread during sort algorithm: "  +
