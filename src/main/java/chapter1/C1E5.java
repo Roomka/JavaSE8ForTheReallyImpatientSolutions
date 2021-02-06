@@ -13,12 +13,6 @@ public class C1E5 {
         }
     }
 
-    public static void runnableLambda() {
-        Runnable hiMessage = () -> System.out.println("Hi from thread " + Thread.currentThread().getId());;
-
-        new Thread(hiMessage).start();
-    }
-
     public static class ActionListenerExample implements ActionListener {
 
         @Override
@@ -39,7 +33,8 @@ public class C1E5 {
         hiMessage.run();
 
         // Runnable Java 8 With Lambda
-        C1E5.runnableLambda();
+        Runnable hiMessageLambdaVersion = () -> System.out.println("Hi from thread " + Thread.currentThread().getId());
+        hiMessageLambdaVersion.run();
 
         // Action Listener Example Java 7 way
         ActionListener actionListener = new ActionListenerExample();
